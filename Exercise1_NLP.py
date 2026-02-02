@@ -81,7 +81,7 @@ def computation_plotting(book_words, count_list, language):
     for word, freq in zip(book_words, count_list):
         length_freq[len(word)].append(freq)
 
-    # Compute the average frequency for each word length
+    # Computing the average frequency for each word length
     lengths = sorted(length_freq.keys())
     avg_freqs = [np.mean(length_freq[l]) for l in lengths]
 
@@ -94,11 +94,12 @@ def computation_plotting(book_words, count_list, language):
     plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.show()
 
-# English poems
+# English poems plotting
 computation_plotting(book_en_words, count_list_en, "English")
-# Spanish poems
+# Spanish poems plotting
 computation_plotting(book_es_words, count_list_es, "Spanish")
 
+# Search words with length of 15 to see why there is higher frequency
 for word in book_en_words:
     if len(word) == 15:
         print(word)
